@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Memorial</title>
 </head>
 <body>
     <h1>Faça sua postagem</h1>
+    <form action="#" method="post" autocomplete="on">
+        <div class="form">
+            <label for="nome">Nome: </label>
+            <input type="text" name="username" id="nome">
+        </div>
+        <div class="form">
+            <label for="comentario">Comentario: </label>
+            <input type="text" name="" id="coment">
+        </div>
+        <div class="form">
+            <label for="arquivo">Video ou imagem: </label>
+            <input type="file" name="file" id="arquivo">
+        </div>
+        <div>
+            <input type="button" value="Postar" onclick="criar()">
+            <input type="reset" value="Reset">
+        </div>
+        <main id="espaço">
+
+        </main>
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>
