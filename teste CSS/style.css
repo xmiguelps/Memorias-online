@@ -19,23 +19,46 @@ main {
     width: 100vw;
 }
 
-div {
+main > div {
     background-color: white;
-    padding: 0px 0px 10px 0px;
-    border-radius: 20px;
+    border-radius: 20px 20px 5px 5px;
+    height: 290px;
+    min-width: 400px;
 }
 
 img {
-    border-radius: 20px 20px 0px 0px;
-    width: 400px;
+    border-radius: 19px 19px 0px 0px;
+    min-width: 400px;
     height: 250px;
 }
 
+div#flex {
+    border-radius: 0px 0px 5px 5px;
+    background-color: white;
+    width: 400px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
 h1 {
-    text-indent: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    text-align: right;
+    font-weight: lighter;
+    font-size: 1.5em;
 }
 
 p {
-    text-indent: 10px;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 246px;
+    min-height: 35px;
+    align-self: center;
+    margin-left: 5px;
+    font-size: 0.9em;
 }
