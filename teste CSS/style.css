@@ -20,39 +20,45 @@ main {
 }
 
 main > div {
-    background-color: white;
-    border-radius: 20px 20px 5px 5px;
-    height: 290px;
+    background-color: rgb(73, 73, 73);
+    border-radius: 20px 20px 20px 20px;
+    min-height: 330px;
     min-width: 400px;
+    padding: 15px;
+    border: solid 2px rgb(102, 102, 102);
+    display: flex;
+    flex-flow: column nowrap;
 }
 
-img {
+main > div > img {
     border-radius: 19px 19px 0px 0px;
     min-width: 400px;
     height: 250px;
 }
 
-div#flex {
+main > div > div#flex {
     border-radius: 0px 0px 5px 5px;
-    background-color: white;
+    background-color: rgb(73, 73, 73);
     width: 400px;
     min-height: 50px;
     display: flex;
     justify-content: space-between;
+    color: rgb(240, 240, 240);
+    align-self: flex-end;
 }
 
-h1 {
+main h1 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 10px;
     text-align: right;
     font-weight: lighter;
-    font-size: 1.5em;
+    font-size: 0.8em;
 }
 
-p {
+main p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,5 +66,5 @@ p {
     min-height: 35px;
     align-self: center;
     margin-left: 5px;
-    font-size: 0.9em;
+    font-size: 1.3em;
 }
