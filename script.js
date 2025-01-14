@@ -2,6 +2,7 @@ function postar() {
     let espaço = document.getElementById('espaço')
     let post = document.createElement('div')
     espaço.appendChild(post)
+    let div_flex = document.createElement('div')
     let user = String(document.getElementById('nome').value)
     let coment = String(document.getElementById('coment').value)
     let imagem = document.createElement('img')
@@ -16,20 +17,22 @@ function postar() {
         }
       })
     post.setAttribute('class', 'postespaço')
+    div_flex.setAttribute('class', 'divflex')
     
     let nome = document.createElement('h1')
     nome.setAttribute('class', 'postuser')
-    nome.innerText = user
+    nome.innerText = `-${user}`
     
-    let txt = document.createElement('p')
-    txt.setAttribute('class', 'postcoment')
-    txt.innerText = coment
-    
+    let comentario = document.createElement('p')
+    comentario.setAttribute('class', 'postcoment')
+    comentario.innerText = coment
+      
     imagem.setAttribute('class', 'postimg')
 
-    post.appendChild(txt)
-    post.appendChild(nome)
     post.appendChild(imagem)
+    post.appendChild(div_flex)
+    div_flex.appendChild(comentario)
+    div_flex.appendChild(nome)
 }   
 
 //objetivo: aparecer as 3 coisas
@@ -39,16 +42,3 @@ function postar() {
     - post.appendChild(imagem)
     - post.appendChild()
     - post.appendChild()*/
-
-
-
-
-
-
-
-
-
-
-
-
-    // pausa pro lanchinho
