@@ -15,8 +15,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    width: 100vw;
+    height: 70%;
+    width: 100%;
 }
 
 .postespaço {
@@ -58,10 +58,50 @@ main {
     font-size: 0.7em;
 }
 
-.postcoment{
+.postcomentario{
     flex: 0 0 320px;
     align-self: flex-start;
     min-height: 35px;
     margin-left: 5px;
     font-size: 1.3em;
+}
+
+#picture__input {
+    display: none;
+  }
+  
+.picture {
+    width: 400px;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+}
+  
+.picture:hover {
+    color: #777;
+    background: #ccc;
+}
+  
+.picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+}
+  
+.picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+  .picture__img {
+    max-width: 100%;
 }

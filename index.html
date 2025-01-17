@@ -18,16 +18,16 @@
             <label for="coment">Comentario: </label>
             <input type="text" name="cm" id="coment">
         </div>
-        <div class="form">
-            <label for="arquivo">Agora escolha um video ou imagem </label><br>
-            <input type="file" name="file" id="arquivo">
-        </div>
+            <label class="picture" for="picture__input" tabIndex="0">
+                <span class="picture__image"></span>
+            </label>
+          
+            <input type="file" name="picture__input" id="picture__input">
         <div>
-            <input type="button" value="Postar" onclick="postar()">
             <input type="reset" value="Reset">
         </div>
     </form>
-    <main id="espaço">
+    <main id="mainbox">
     </main>
     <script src="script.js"></script>
 </body>
