@@ -1,45 +1,3 @@
-/*
-    let post = document.createElement('div')
-    espaço.appendChild(post)
-    let div_flex = document.createElement('div')
-    let user = String(document.getElementById('nome').value)
-    let coment = String(document.getElementById('coment').value)
-    document.getElementById('arquivo').addEventListener('change', function(event) {
-        var file = event.target.files[0]; // Acessa o primeiro arquivo selecionado
-        if (file) {
-          var reader = new FileReader();
-          reader.onload = function(e) {
-            let imagem = document.createElement('img')
-            imagem.src = e.target.result; // Exibe a imagem
-            imagem.classList.add('postimg')
-            post.appendChild(imagem)
-          }
-          reader.readAsDataURL(file); // Lê o arquivo como URL de dados (base64)
-        }
-      })
-    post.setAttribute('class', 'postespaço')
-    div_flex.setAttribute('class', 'divflex')
-    
-    let nome = document.createElement('h1')
-    nome.setAttribute('class', 'postuser')
-    nome.innerText = `-${user}`
-    
-    let comentario = document.createElement('p')
-    comentario.setAttribute('class', 'postcoment')
-    comentario.innerText = coment
-
-    post.appendChild(div_flex)
-    div_flex.appendChild(comentario)
-    div_flex.appendChild(nome) 
-
-//objetivo: aparecer as 3 coisas
-  
-    Usar no final
-
-    - post.appendChild(imagem)
-    - post.appendChild()
-    - post.appendChild()*/
-
 const inputFile = document.querySelector("#picture__input")
 const pictureImage = document.querySelector(".picture__image")
 const pictureImageTxt = "Choose an image"
@@ -60,23 +18,28 @@ inputFile.addEventListener("change", function (e) {
       let nome = document.createElement('h1')
       nome.innerHTML = `-${txtnome}`
       nome.classList.add("postuser")
+      nome.setAttribute('id', 'valuenome')
 
       let txtcoment = String(document.querySelector
       ("input#coment").value)
       let comentario = document.createElement('p')
       comentario.innerHTML = txtcoment
       comentario.classList.add("postcomentario")
+      comentario.setAttribute('id', 'valuecoment')
       
       let divflex = document.createElement('div')
       divflex.classList.add("divflex")
+      divflex.setAttribute('id', 'valuedivflex')
 
       const readerTarget = e.target
       var espaço = document.createElement("div")
       espaço.classList.add("postespaço")
+      espaço.setAttribute('id', 'valueespaço')
     
       const img = document.createElement("img")
       img.src = readerTarget.result
       img.classList.add("postimg")
+      img.setAttribute('id', 'valueimg')
     
       pictureImage.innerHTML = ""
       
@@ -85,6 +48,8 @@ inputFile.addEventListener("change", function (e) {
       espaço.appendChild(divflex)
       divflex.appendChild(comentario)
       divflex.appendChild(nome)
+
+      salvar(main_box.outerHTML)
     })
     
     reader.readAsDataURL(file)
@@ -92,3 +57,28 @@ inputFile.addEventListener("change", function (e) {
         pictureImage.innerHTML = pictureImageTxt
   }
 })
+
+function salvar(novoElemento) {
+  let files = JSON.parse(localStorage.getItem("files")) || [];
+  files.push(novoElemento)
+  localStorage.setItem("files", JSON.stringify(files))
+  var box = document.getElementById('box')
+  box.style.height += '500px'
+  location.reload()
+}
+
+window.onload = function () {
+  let save_files = JSON.parse(localStorage.getItem('files'))
+
+   if (save_files) {
+      let container = document.getElementById('box')
+      
+      save_files.forEach(elementoHTML => {
+      let tempContainer = document.createElement('div')
+      tempContainer.innerHTML = elementoHTML
+      let elemento = tempContainer.firstChild
+
+      container.appendChild(elemento)
+    })
+  }
+}

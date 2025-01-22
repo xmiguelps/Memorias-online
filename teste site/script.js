@@ -49,7 +49,7 @@ inputFile.addEventListener("change", function (e) {
       divflex.appendChild(comentario)
       divflex.appendChild(nome)
 
-      salvar(espaço.outerHTML)
+      salvar(main_box.outerHTML)
     })
     
     reader.readAsDataURL(file)
@@ -58,39 +58,20 @@ inputFile.addEventListener("change", function (e) {
   }
 })
 
-/*function salvar() {
-  let value_name = document.getElementById('valuenome')
-
-  let value_coment = document.getElementById('valuecoment')
-
-  let value_img = document.getElementById('valueimg')
-
-  let value_divflex = document.getElementById('valuedivflex')
-
-  let value_espaço = document.getElementById('valueespaço')
-
-  let files = [
-    value_espaço.outerHTML,
-    value_img.outerHTML,
-    value_divflex.outerHTML,
-    value_coment.outerHTML,
-    value_name.outerHTML
-  ]
-
-  localStorage.setItem('files', JSON.stringify(files))
-}*/
-
 function salvar(novoElemento) {
   let files = JSON.parse(localStorage.getItem("files")) || [];
   files.push(novoElemento)
   localStorage.setItem("files", JSON.stringify(files))
+  var box = document.getElementById('box')
+  box.style.height += '500px'
+  location.reload()
 }
 
 window.onload = function () {
   let save_files = JSON.parse(localStorage.getItem('files'))
 
    if (save_files) {
-      let container = document.getElementById('mainbox')
+      let container = document.getElementById('box')
       
       save_files.forEach(elementoHTML => {
       let tempContainer = document.createElement('div')

@@ -7,26 +7,32 @@
     <title>Memorial</title>
 </head>
 <body>
-    <h1>Faça sua postagem</h1>
-    <form action="#" method="post" autocomplete="on">
-        <div class="form">
-            <label for="nome">Nome: </label>
-            <input type="text" name="username" id="nome">
-        </div>
-        <div class="form">
-            <label for="coment">Comentario: </label>
-            <input type="text" name="cm" id="coment">
-        </div>
-            <label class="picture" for="picture__input" tabIndex="0">
-                <span class="picture__image"></span>
-            </label>
-          
-            <input type="file" name="picture__input" id="picture__input">
-        <div>
-            <input type="reset" value="Reset">
-        </div>
-    </form>
-    <main id="mainbox">
+    <header>
+        <h1>Faça sua postagem</h1>
+        <form action="#" method="post" autocomplete="on">
+            <div class="form" id="nomebox">
+                <label for="nome">Nome: </label>
+                <input type="text" name="username" id="nome">
+            </div>
+            <div class="form" id="comentbox">
+                <label for="coment">Comentario: </label>
+                <input type="text" name="cm" id="coment">
+            </div>
+            <p>Ao escolher sua imagem, seu "funny-moment" será postado!!!</p>
+            <div id="imgbox">
+                <label class="picture" for="picture__input" tabIndex="0">
+                    <span class="picture__image"></span>
+                </label>
+                <input type="file" name="picture__input" id="picture__input">
+            </div>
+            <div>
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </header>
+    <main id="box">
+        <section id="mainbox">
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
